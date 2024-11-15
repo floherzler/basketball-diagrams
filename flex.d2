@@ -1,0 +1,82 @@
+direction: down
+Flex zum Klicken.link: layers.start
+
+layers: {
+    # direction: down
+    start:{
+        direction: down
+        explanation: |md
+            # Start mit Ball auf der 2 Mann-Seite
+            Weak Side Action:
+            1. back screen & cut auf ball side
+            2. down screen & cut hoch
+        | {
+            near: top-center
+        }
+        court: ""{
+            shape: image
+            icon: ./img/court.png
+            width: 600
+            height: 400
+        }
+
+        Options: {
+            near: bottom-center
+            📨Pass Inside.link: layers.ball inside
+            📨Pass Cross.link: layers.ball cross
+            📨Pass Corner.link: layers.ball corner
+            ⛹️HandOff Corner.link: layers.handoff corner
+        }
+        
+        layers: {
+            ball corner: {
+                # direction: down
+                court: Ball wurde von Oben in die Ecke gepasst{
+                    shape: image
+                    icon: ./img/court.png
+                    width: 600
+                    height: 400
+                }
+                layers: {
+                    # 
+                }
+              }
+            ball inside: {
+                # direction: down
+                court: Ball wurde von Oben in den Post gepasst{
+                    shape: image
+                    icon: ./img/court.png
+                    width: 600
+                    height: 400
+                }
+                layers: {
+                    # 
+                }
+            }
+            ball cross: {
+                # direction: down
+                court: Ball wurde von Oben auf die andere Seite gepasst{
+                    shape: image
+                    icon: ./img/court.png
+                    width: 600
+                    height: 400
+                }
+                layers: {
+                    # 
+                }
+            }
+            handoff corner: {
+                # direction: down
+                court: Handoff Richtung Corner{
+                    shape: image
+                    icon: ./img/court.png
+                    width: 600
+                    height: 400
+                }
+                layers: {
+                    # 
+                }
+            }
+        }
+    } 
+}
