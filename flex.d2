@@ -1,12 +1,292 @@
 direction: down
-Flex zum Klicken.link: layers.start
+Startpositionen: {
+    2-Man Rechts.link: layers.2manRight
+    # 2-Man Links.link: layers.2manRight.layers.backScreenWeakL
+    # 3-Man Rechts.link: layers.2manRight
+    # 3-Man Links.link: layers.2manRight
+}
 
 layers: {
-    # direction: down
+    2manRight: {
+        direction: down
+        explanation: |md
+            # 2 Mann Rechts
+        | {
+            near: top-center
+        }
+        court: ""{
+            shape: image
+            icon: ./img/init2manR.png
+            width: 600
+            height: 400
+        }
+
+        Backscreen auf Weak Side: {
+            near: bottom-center
+            link: layers.backScreenWeakL
+        }
+
+        layers: {
+            backScreenWeakL: {
+                direction: down
+                explanation: |md
+                    # Backscreen auf Weak Side
+                    - Gegenspieler treffen
+                    - Cut über Mitte und Hände zeigen!
+                | {
+                    near: top-center
+                }
+                court: ""{
+                    shape: image
+                    icon: ./img/backScreenWeakL.png
+                    width: 600
+                    height: 400
+                }
+
+                Downscreen auf Weak Side: {
+                    near: bottom-center
+                    link: layers.downScreenWeakL
+                }
+
+                layers: {
+                    downScreenWeakL: {
+                        direction: down
+                        explanation: |md
+                            # Downscreen auf Weak Side
+                            - Gegenspieler treffen
+                        | {
+                            near: top-center
+                        }
+                        court: ""{
+                            shape: image
+                            icon: ./img/downScreenWeakL.png
+                            width: 600
+                            height: 400
+                        }
+
+                        3 Mann auf Rechts: {
+                            near: bottom-center
+                            link: layers.3manRight
+                        }
+
+                        layers: {
+                            3manRight: {
+                                direction: down
+                                explanation: |md
+                                    # 3 Mann Rechts
+                                | {
+                                    near: top-center
+                                }
+                                court: ""{
+                                    shape: image
+                                    icon: ./img/init3manR.png
+                                    width: 600
+                                    height: 400
+                                }
+                                Optionen: {
+                                    near: bottom-center
+                                    HandOff Corner.link: layers.handoffCornerR
+                                    # HandOff Oben Spanish.link: layers.handoffSpanishR
+                                    Pass Corner.link: layers.passCornerR
+                                    # Pass Inside.link: layers.passInsideR
+                                    # Pass Cross.link: layers.passCrossR
+                                }
+                                layers: {
+                                    handoffCornerR: {
+                                        direction: down
+                                        explanation: |md
+                                            # Handoff Richtung Corner
+                                        | {
+                                            near: top-center
+                                        }
+                                        court: ""{
+                                            shape: image
+                                            icon: ./img/handoffCornerR.png
+                                            width: 600
+                                            height: 400
+                                        }
+                                        Pick and Roll + Exchange: {
+                                            near: bottom-center
+                                            link: layers.pickHandoffR
+                                        }
+                                        layers: {
+                                            pickHandoffR: {
+                                                direction: down
+                                                explanation: |md
+                                                    # Pick & Roll + Exchange
+                                                    - Pick eng nutzen!
+                                                    - Exchange auf Weak Side!
+                                                | {
+                                                    near: top-center
+                                                }
+                                                court: ""{
+                                                    shape: image
+                                                    icon: ./img/pickHandoffR.png
+                                                    width: 600
+                                                    height: 400
+                                                }
+                                                Roll + Optionen: {
+                                                    near: bottom-center
+                                                    link: layers.rollHandoffR
+                                                }
+                                                layers: {
+                                                    rollHandoffR: {
+                                                        direction: down
+                                                        explanation: |md
+                                                            # Roll + Handoff
+                                                            - Option wählen
+                                                        | {
+                                                            near: top-center
+                                                        }
+                                                        court: ""{
+                                                            shape: image
+                                                            icon: ./img/rollHandoffR.png
+                                                            width: 600
+                                                            height: 400
+                                                        }
+                                                        Optionen: {
+                                                            near: bottom-center
+                                                            Bounce auf Roller für Score
+                                                            Backup Dribble.link: layers.init2manR
+                                                        }
+                                                        layers: {
+                                                            init2manR: {
+                                                                direction: down
+                                                                explanation: |md
+                                                                    # 2 Mann Rechts
+                                                                | {
+                                                                    near: top-center
+                                                                }
+                                                                court: ""{
+                                                                    shape: image
+                                                                    icon: ./img/init2manR.png
+                                                                    width: 600
+                                                                    height: 400
+                                                                }
+                                                                Optionen: {
+                                                                    near: bottom-center
+                                                                    Weak Side Action (BackScreen + DownScreen)
+                                                                    # HandOff Corner.link: layers.handoffCornerR
+                                                                    # HandOff Oben Spanish.link: layers.handoffSpanishR
+                                                                    # Pass Corner.link: layers.passCornerR
+                                                                    # Pass Inside.link: layers.passInsideR
+                                                                    # Pass Cross.link: layers.passCrossR
+                                                                }
+                                                                layers: {
+                                                                    handoffCornerR: {
+                                                                        direction: down
+                                                                        explanation: |md
+                                                                            # Handoff Richtung Corner
+                                                                        | {
+                                                                            near: top-center
+                                                                        }
+                                                                        court: ""{
+                                                                            shape: image
+                                                                            icon: ./img/handoffCornerR.png
+                                                                            width: 600
+                                                                            height: 400
+                                                                        }
+                                                                        Pick and Roll: {
+                                                                            near: bottom-center
+                                                                            link: layers.pickHandoffR
+                                                                        }
+                                                                        layers: {
+                                                                            pickHandoffR: {
+                                                                                direction: down
+                                                                                explanation: |md
+                                                                                    # Pick & Roll + Exchange
+                                                                                | {
+                                                                                    near: top-center
+                                                                                }
+                                                                                court: ""{
+                                                                                    shape: image
+                                                                                    icon: ./img/pickBallRExchangeWeakL.png
+                                                                                    width: 600
+                                                                                    height: 400
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    passCornerR: {
+                                        direction: down
+                                        explanation: |md
+                                            # Pass in die Ecke
+                                        | {
+                                            near: top-center
+                                        }
+                                        court: ""{
+                                            shape: image
+                                            icon: ./img/passCornerR.png
+                                            width: 600
+                                            height: 400
+                                        }
+                                        Upscreen: {
+                                            near: bottom-center
+                                            link : layers.upScreenR
+                                        }
+                                        layers: {
+                                            upScreenR: {
+                                                direction: down
+                                                explanation: |md
+                                                    # Upscreen
+                                                | {
+                                                    near: top-center
+                                                }
+                                                court: ""{
+                                                    shape: image
+                                                    icon: ./img/upScreenR.png
+                                                    width: 600
+                                                    height: 400
+                                                }
+                                                Optionen: {
+                                                    near: bottom-center
+                                                    HandOff Corner.link: layers.pickBallRExchangeWeakL
+                                                }
+                                                layers: {
+                                                    pickBallRExchangeWeakL: {
+                                                        direction: down
+                                                        explanation: |md
+                                                            # Pick & Roll + Exchange
+                                                        | {
+                                                            near: top-center
+                                                        }
+                                                        court: ""{
+                                                            shape: image
+                                                            icon: ./img/pickBallRExchangeWeakL.png
+                                                            width: 600
+                                                            height: 400
+                                                        }
+                                                        Roll + Optionen: {
+                                                            near: bottom-center
+                                                            Roll + Score
+                                                            Backup Dribbling für 2man R
+                                                            Pass Weak Flügel
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }            
+            }
+        }
+    }
     start:{
         direction: down
         explanation: |md
-            # Start mit Ball auf der 2 Mann-Seite
+            # Start mit Ball auf der 2 Mann-Seite Rechts
             Weak Side Action:
             1. back screen & cut auf ball side
             2. down screen & cut hoch
@@ -15,17 +295,17 @@ layers: {
         }
         court: ""{
             shape: image
-            icon: ./img/court.png
+            icon: ./img/init2manR.png
             width: 600
             height: 400
         }
 
-        Options: {
+        Weak Side Action: {
             near: bottom-center
-            📨Pass Inside.link: layers.ball inside
-            📨Pass Cross.link: layers.ball cross
-            📨Pass Corner.link: layers.ball corner
-            ⛹️HandOff Corner.link: layers.handoff corner
+            # 📨Pass Inside.link: layers.ball inside
+            # 📨Pass Cross.link: layers.ball cross
+            # 📨Pass Corner.link: layers.ball corner
+            # ⛹️HandOff Corner.link: layers.handoff corner
         }
         
         layers: {
