@@ -1,0 +1,65 @@
+direction: down
+
+leftSide: Linke Seite{
+    2man: {
+        backScreenWeakSide
+        downScreenWeakSide
+    }
+    3man: {
+        pickAndRoll
+        ballOptions
+        passInside
+        passCross
+        passCorner
+        handOffCorner
+
+        ballOptions -> passInside
+        ballOptions -> passCross
+        ballOptions -> passCorner
+        ballOptions -> handOffCorner
+    }
+}
+
+rightSide: Rechte Seite{
+    3man: {
+        pickAndRoll
+        ballOptions
+        passInside
+        passCross
+        passCorner
+        handOffCorner
+
+        ballOptions -> passInside
+        ballOptions -> passCross
+        ballOptions -> passCorner
+        ballOptions -> handOffCorner
+    }
+    2man: {
+        backScreenWeakSide
+        downScreenWeakSide
+    }
+}
+
+
+leftSide.2man.backScreenWeakSide -> leftSide.2man.downScreenWeakSide: GegenSpieler treffen, anbieten unter Korb, auf Low Post
+leftSide.2man.downScreenWeakSide -> leftSide.3man.ballOptions: Gegenspieler treffen, dann raus in Corner
+
+leftSide.3man.passInside -> leftSide.2man.backScreenWeakSide: Beide cutten nach Pass an Insidespieler vorbei, Weak Side füllt auf
+leftSide.3man.passCross -> rightSide.2man.backScreenWeakSide: 3 Mann auf Weak Side
+leftSide.3man.passCorner -> leftSide.3man.pickAndRoll: Upscreen dann Cut auf Weak Side, dann
+leftSide.3man.handOffCorner -> leftSide.3man.pickAndRoll: HandOff und in Ecke, Pick&Roll Flügel mit Inside Spieler
+leftSide.3man.pickAndRoll -> leftSide.2man: Backup Dribble, Picksteller geht raus in Corner
+leftSide.3man.pickAndRoll -> rightSide.3man: Pass auf anderen Flügel, dann Weak Side wieder raus auf Flügel / Corner
+
+
+rightSide.2man.backScreenWeakSide -> rightSide.2man.downScreenWeakSide: Gegenspieler treffen, anbieten unter Korb, auf Low Post
+rightSide.2man.downScreenWeakSide -> rightSide.3man.ballOptions: Gegenspieler treffen, dann raus in Corner
+
+rightSide.3man.passInside -> rightSide.2man.backScreenWeakSide: Beide cutten nach Pass an Insidespieler vorbei, Weak Side füllt auf
+rightSide.3man.passCross -> leftSide.2man.backScreenWeakSide: 3 Mann auf Weak Side
+rightSide.3man.passCorner -> rightSide.3man.pickAndRoll: Upscreen dann Cut auf Weak Side, dann Pick&Roll Flügel mit Inside Spieler
+rightSide.3man.handOffCorner -> rightSide.3man.pickAndRoll: HandOff und in Ecke, Pick&Roll Flügel mit Inside Spieler
+rightSide.3man.pickAndRoll -> rightSide.2man: Backup Dribble, Picksteller geht raus in Corner
+rightSide.3man.pickAndRoll -> leftSide.3man: Pass auf anderen Flügel, dann Weak Side wieder raus auf Flügel / Corner
+
+
